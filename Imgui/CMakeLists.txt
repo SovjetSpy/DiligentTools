@@ -9,6 +9,7 @@ else()
 endif()
 
 set(IMGUIZMO_QUAT_PATH ../ThirdParty/imGuIZMO.quat)
+set(IMGUI_DOCK_PATH ../ThirdParty/imguiDock)
 
 set(DEAR_IMGUI_INCLUDE
     ${DEAR_IMGUI_PATH}/imconfig.h
@@ -38,6 +39,11 @@ set(SOURCE
 set(IMGUIZMO_QUAT_SOURCE
     ${IMGUIZMO_QUAT_PATH}/imGuIZMO.cpp
     ${IMGUIZMO_QUAT_PATH}/imGuIZMO.h
+)
+
+set(IMGUI_DOCK_SOURCE
+    ${IMGUI_DOCK_PATH}/imgui_dock.cpp
+    ${IMGUI_DOCK_PATH}/imgui_dock.h
 )
 
 set(INTERFACE
@@ -80,6 +86,7 @@ add_library(Diligent-Imgui STATIC
     ${DEAR_IMGUI_INCLUDE}
     ${DEAR_IMGUI_INTERFACE}
     ${IMGUIZMO_QUAT_SOURCE}
+    ${IMGUI_DOCK_SOURCE}
 )
 
 set_common_target_properties(Diligent-Imgui)
@@ -89,6 +96,7 @@ PUBLIC
     interface
     ${IMGUIZMO_QUAT_PATH}
     ${DEAR_IMGUI_PATH}
+    ${IMGUI_DOCK_PATH}
 PRIVATE
     include
 )
@@ -113,6 +121,7 @@ source_group("src" FILES ${SOURCE})
 source_group("include" FILES ${INCLUDE})
 source_group("interface" FILES ${INTERFACE})
 source_group("imGuIZMO.quat" FILES ${IMGUIZMO_QUAT_SOURCE})
+source_group("imguiDock" FILES ${IMGUI_DOCK_SOURCE})
 
 target_link_libraries(Diligent-Imgui
 PRIVATE
