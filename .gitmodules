@@ -1,8 +1,6 @@
-[submodule "ThirdParty/imgui"]
-	path = ThirdParty/imgui
-	url = https://github.com/DiligentGraphics/imgui
 [submodule "ThirdParty/imguiDock"]
 	path = ThirdParty/imguiDock
 	url = https://github.com/SovjetSpy/imguiDock.git
-[submodule "imgui"]
+[submodule "ThirdParty/docking"]
+	path = ThirdParty/docking
 	url = https://github.com/ocornut/imgui.git
