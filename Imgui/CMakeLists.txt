@@ -26,8 +26,10 @@ set(DEAR_IMGUI_INTERFACE
 
 set(DEAR_IMGUI_SOURCE
     ${DEAR_IMGUI_PATH}/imgui.cpp
+	${DEAR_IMGUI_PATH}/imgui_demo.cpp
     ${DEAR_IMGUI_PATH}/imgui_draw.cpp
     ${DEAR_IMGUI_PATH}/imgui_widgets.cpp
+	${DEAR_IMGUI_PATH}/imgui_tables.cpp
     ${DEAR_IMGUI_PATH}/misc/cpp/imgui_stdlib.cpp
 )
 
@@ -42,8 +44,8 @@ set(IMGUIZMO_QUAT_SOURCE
 )
 
 set(IMGUI_DOCK_SOURCE
-    ${IMGUI_DOCK_PATH}/imgui_dock.cpp
-    ${IMGUI_DOCK_PATH}/imgui_dock.h
+    #${IMGUI_DOCK_PATH}/imgui_dock.cpp
+    #${IMGUI_DOCK_PATH}/imgui_dock.h
 )
 
 set(INTERFACE
@@ -53,8 +55,8 @@ set(INTERFACE
 )
 
 if(PLATFORM_WIN32)
-    list(APPEND DEAR_IMGUI_SOURCE ${DEAR_IMGUI_PATH}/examples/imgui_impl_win32.cpp)
-    list(APPEND DEAR_IMGUI_INCLUDE ${DEAR_IMGUI_PATH}/examples/imgui_impl_win32.h)
+    list(APPEND DEAR_IMGUI_SOURCE ${DEAR_IMGUI_PATH}/backends/imgui_impl_win32.cpp)
+    list(APPEND DEAR_IMGUI_INCLUDE ${DEAR_IMGUI_PATH}/backends/imgui_impl_win32.h)
 
     list(APPEND SOURCE src/ImGuiImplWin32.cpp)
     list(APPEND INTERFACE interface/ImGuiImplWin32.hpp)
@@ -68,8 +70,8 @@ elseif(PLATFORM_ANDROID)
     list(APPEND SOURCE src/ImGuiImplAndroid.cpp)
     list(APPEND INTERFACE interface/ImGuiImplAndroid.hpp)
 elseif(PLATFORM_MACOS)
-    list(APPEND DEAR_IMGUI_SOURCE ${DEAR_IMGUI_PATH}/examples/imgui_impl_osx.mm)
-    list(APPEND DEAR_IMGUI_INCLUDE ${DEAR_IMGUI_PATH}/examples/imgui_impl_osx.h)
+    list(APPEND DEAR_IMGUI_SOURCE ${DEAR_IMGUI_PATH}/backends/imgui_impl_osx.mm)
+    list(APPEND DEAR_IMGUI_INCLUDE ${DEAR_IMGUI_PATH}/backends/imgui_impl_osx.h)
 
     list(APPEND SOURCE src/ImGuiImplMacOS.mm)
     list(APPEND INTERFACE interface/ImGuiImplMacOS.hpp)

@@ -29,6 +29,7 @@
 
 #include <algorithm>
 #include <limits>
+#include <string>
 
 #include "../../ThirdParty/imgui/imgui.h"
 #include "../../ThirdParty/imgui/imgui_internal.h"
@@ -112,7 +113,6 @@ inline const char* c_str(const char* str)
 {
     return str;
 }
-
 } // namespace
 
 template <typename ItemType, typename StrType>
